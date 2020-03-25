@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.ArticleCTRL">
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <ComboBox fx:id="cbArticle" layoutX="117.0" onAction="#actionSelectArticle" prefHeight="25.0" prefWidth="199.0" promptText="%Choisir_un_article" style="-fx-background-color: Lavender;" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <Blend />
+               </effect>
+            </ComboBox>
+            <Button fx:id="btRefresh" layoutX="349.0" mnemonicParsing="false" onAction="#actionBtRefresh" prefHeight="18.0" prefWidth="18.0" style="-fx-graphic: url(/vue/images/refresh16x16.png);" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <GridPane hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="%Code_Article" GridPane.halignment="CENTER" />
+            <TextField fx:id="ztCode" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="ztNom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ztPrix" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="%Nom_Article" GridPane.rowIndex="1" />
+            <Label text="%Prix_Article" GridPane.rowIndex="2" />
+            <Label text="%Description" GridPane.rowIndex="3" />
+            <Label text="%Disponible" GridPane.rowIndex="4" />
+            <Label text="%Calories" GridPane.rowIndex="5" />
+            <Label text="%Etapes" GridPane.rowIndex="6" />
+            <Label text="%Categories" GridPane.rowIndex="7" />
+            <TextField fx:id="ztDesc" layoutX="130.0" layoutY="83.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="ztCalories" layoutX="130.0" layoutY="147.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <CheckBox fx:id="ChckBDispo" mnemonicParsing="false" text="%cet_article_est_disponible" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="chbEtapes" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="chbCat" layoutX="130.0" layoutY="263.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+         <opaqueInsets>
+            <Insets left="10.0" />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btValider" mnemonicParsing="false" onAction="#actionBtValider" text="%Valider">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btQuitter" onAction="#actionBtQuitter" text="%Quitter">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin></Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets left="10.0" right="10.0" />
+         </opaqueInsets>
+      </HBox>
+   </bottom>
+</BorderPane>

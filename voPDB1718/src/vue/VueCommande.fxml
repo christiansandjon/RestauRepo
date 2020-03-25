@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" stylesheets="@css/resto.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.VueCommandeController">
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true">
+        <content>
+          <AnchorPane>
+               <children>
+                  <TableView fx:id="tblView" minWidth="-Infinity" onInputMethodTextChanged="#chmtEtatCmd" prefHeight="418.0" prefWidth="440.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="5.0">
+                    <columns>
+                      <TableColumn fx:id="colNumL" editable="false" minWidth="30.0" prefWidth="103.0" text="Num" />
+                      <TableColumn fx:id="colArticle" editable="false" minWidth="30.0" prefWidth="83.0" sortable="false" text="%Article" />
+                        <TableColumn fx:id="colEtatL" minWidth="30.0" text="%Etat" />
+                        <TableColumn fx:id="colPayeeL" prefWidth="75.0" sortable="false" text="%PayeeL" />
+                        <TableColumn fx:id="colPrixL" minWidth="30.0" prefWidth="75.0" sortable="false" text="%PrixL" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </center>
+   <left>
+      <VBox alignment="CENTER" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXTextField fx:id="ztNumCmd" accessibleRole="IMAGE_VIEW" alignment="CENTER" editable="false" labelFloat="true" promptText="%NumCommande" text="%NumCommande">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="ztMomentA" accessibleRole="IMAGE_VIEW" alignment="CENTER" editable="false" labelFloat="true" layoutX="15.0" layoutY="20.0" prefHeight="27.0" prefWidth="109.0" promptText="%MomentA" text="%MomentA">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="ztMomentS" accessibleRole="IMAGE_VIEW" alignment="CENTER" editable="false" labelFloat="true" layoutX="10.0" layoutY="52.0" promptText="%MomentS" text="%MomentS">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="ztTotal" accessibleRole="IMAGE_VIEW" alignment="CENTER" editable="false" labelFloat="true" layoutX="10.0" layoutY="79.0" promptText="%TotalC" text="%TotalC">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXComboBox fx:id="cbEtatC" onAction="#chmtEtatCmd" promptText="%EtatC">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </JFXComboBox>
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" minHeight="-Infinity" prefHeight="40.0" prefWidth="590.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btAjoutArticle" mnemonicParsing="false" onAction="#actionAjoutArticle" prefWidth="100.0" text="%btAjoutArticle">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btRetour" mnemonicParsing="false" onAction="#actionExit" prefWidth="100.0" text="%btExit">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btSave" layoutX="495.0" layoutY="17.0" mnemonicParsing="false" onAction="#actionSave" prefWidth="100.0" text="%btSave">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <Label id="titreCMD" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="30.0" text="%Titre" textAlignment="CENTER" textFill="#113ba4" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

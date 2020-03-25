@@ -1,0 +1,18 @@
+<?xml version ="1.0" encoding ="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FullTest" parallel="false">
+	<test name="TestDatabases">
+		<classes>
+			<class name="test.databases.TestConnexions" />
+			<class name="test.databases.TestDBURL" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="TestDAO">
+		<classes>
+			<class name="test.databases.TestDAO" />
+			<class name="test.databases.TestDAOCommande" />
+			<class name="test.databases.TestDAOServeur" />
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->

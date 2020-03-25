@@ -1,0 +1,18 @@
+
+#AccueilResto{
+ -fx-background-color:	lightskyblue ; 
+ -fx-font-weight: bold;
+ -fx-padding: 5px
+}
+.button:hover{
+	/*#-fx-background-color: ;*/
+	-fx-color:  palegreen;
+}
+#titreCMD{
+	-fx-background-color: aliceblue ;
+}
+
+#titreChoixArticle{
+	-fx-background-color: cadetblue  ;
+	-fx-font-size: 16px 
+}
